@@ -1,0 +1,15 @@
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\obj\Debug\net8.0\ReadExcel.ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\obj\Debug\net8.0\ReadExcel.ConsoleApp.AssemblyInfoInputs.cache
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\obj\Debug\net8.0\ReadExcel.ConsoleApp.AssemblyInfo.cs
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\obj\Debug\net8.0\ReadExcel.ConsoleApp.csproj.CoreCompileInputs.cache
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\obj\Debug\net8.0\ReadExcel.ConsoleApp.sourcelink.json
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\bin\Debug\net8.0\ReadExcel.ConsoleApp.exe
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\bin\Debug\net8.0\ReadExcel.ConsoleApp.deps.json
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\bin\Debug\net8.0\ReadExcel.ConsoleApp.runtimeconfig.json
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\bin\Debug\net8.0\ReadExcel.ConsoleApp.dll
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\bin\Debug\net8.0\ReadExcel.ConsoleApp.pdb
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\obj\Debug\net8.0\ReadExcel.ConsoleApp.dll
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\obj\Debug\net8.0\refint\ReadExcel.ConsoleApp.dll
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\obj\Debug\net8.0\ReadExcel.ConsoleApp.pdb
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\obj\Debug\net8.0\ReadExcel.ConsoleApp.genruntimeconfig.cache
+C:\project\ReadExcel.Console\ReadExcel.ConsoleApp\obj\Debug\net8.0\ref\ReadExcel.ConsoleApp.dll
