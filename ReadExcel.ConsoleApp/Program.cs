@@ -20,10 +20,22 @@ namespace ReadExcel.ConsoleApp
             Console.WriteLine($"Number of Excel files found: {excelFiles.Length}");
             Console.WriteLine(" ");
 
-           ReadCsv.ReadCsvFiles(directoryPath);
- 
+            ReadCsv.ReadCsvFiles(directoryPath);
 
 
+            var excelSheets = Directory.GetFiles(directoryPath, "*.csv");
+
+            // Process each Excel file
+            foreach (var file in excelSheets)
+            {
+                var logData = InsertIntoLogData.ProcessCsvFile(file);  // Read data from Excel
+                if (logData != null)  // Only insert if logData is not null
+                {
+                    InsertIntoLogData.InsertLogData(logData);  
+                    Console.WriteLine($"Data from {file} inserted into db");
+                }  // Insert data into the database
+                
+            }
 
 
 
@@ -31,6 +43,16 @@ namespace ReadExcel.ConsoleApp
             // Wait for the user to press a key before closing the console
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
+
+
+
+
+
+
+
+
+
+
         }
     }
 }

@@ -3,8 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 public class LogDbContext : DbContext
 {
-    public DbSet<LogData> LogData { get; set; }  // The DbSet for the logs
-
+    public DbSet<LogData> LogData { get; set; } 
+    public DbSet<RejectedFile> RejectedFiles { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         // Replace with your actual SQL Server connection string
