@@ -2,11 +2,10 @@ using System;
 using System.IO;
 
 
-namespace ReadExcel.ConsoleApp.Services  // Update with your actual namespace
+namespace ReadExcel.ConsoleApp.Services  
 {
     public class InsertIntoLogData
     {
-        // Method to process CSV file and extract data from A2:H2 (which is line 2)
         public static LogData ProcessCsvFile(string filePath)
         {
             var lines = File.ReadAllLines(filePath);
@@ -21,12 +20,12 @@ namespace ReadExcel.ConsoleApp.Services  // Update with your actual namespace
 
             if (values.Length != 8)
             {
-                InsertRejectedFile(filePath);  // Insert the file name into the RejectedFile table
+                InsertRejectedFile(filePath);  
                 
-                return null;  // Skip processing this file
+                return null;  
             }
 
-            // Create and return a new LogData object with the values
+            
             return new LogData
             {
                 Model = values[0],

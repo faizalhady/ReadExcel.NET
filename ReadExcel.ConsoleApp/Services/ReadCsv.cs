@@ -24,7 +24,7 @@ namespace ReadExcel.ConsoleApp.Services
                 {
                     Console.WriteLine($"\nReading file: {file}");
 
-                    // Convert .csv to .xlsx in-memory for ClosedXML processing
+                    // Convert .csv to .xlsx 
                     using (var workbook = new XLWorkbook())
                     {
                         var worksheet = workbook.Worksheets.Add("Sheet1");
@@ -43,11 +43,11 @@ namespace ReadExcel.ConsoleApp.Services
                             rowIndex++;
                             if (rowIndex > 2)
                             {
-                                break; // Break the loop once the second row has been processed
+                                break; 
                             }
                         }
 
-                        // Now that the .csv is loaded, use ClosedXML to read the headers and values
+                        // read andd store
                         var headers = worksheet.Range("A1:H1").Cells();
                         var valuesRange = worksheet.Range("A2:H2").Cells();
 
@@ -56,13 +56,12 @@ namespace ReadExcel.ConsoleApp.Services
 
                         if (actualColumnCount != 8)
                         {
-                            // If there are less or more than 8 values in row 2, mark the file as problematic
                             Console.WriteLine($"[Warning!!!!] This file has an invalid number of values in row 2: {actualColumnCount} (expected 8)");
                             problematicFiles.Add(file);
                         }
                         else
                         {
-                            // Log headers
+                            
                             Console.WriteLine("Headers:");
                             foreach (var cell in headers)
                             {
@@ -70,7 +69,7 @@ namespace ReadExcel.ConsoleApp.Services
                             }
                             Console.WriteLine();
 
-                            // Log values
+                            
                             Console.WriteLine("Values:");
                             foreach (var cell in valuesRange)
                             {
