@@ -41,6 +41,10 @@ namespace ReadExcel.ConsoleApp.Services
                                 worksheet.Cell(rowIndex, i + 1).Value = values[i];
                             }
                             rowIndex++;
+                            if (rowIndex > 2)
+                            {
+                                break; // Break the loop once the second row has been processed
+                            }
                         }
 
                         // Now that the .csv is loaded, use ClosedXML to read the headers and values
@@ -82,13 +86,13 @@ namespace ReadExcel.ConsoleApp.Services
                 }
             }
 
-            // Log problematic files at the end
+            // ################################ Log problematic files ############################################## 
             Console.WriteLine($"\nNumber of problematic files: {problematicFiles.Count}");
-            
+
             if (problematicFiles.Count > 0)
             {
                 Console.WriteLine("List of problematic files:");
-                 Console.WriteLine("");
+                Console.WriteLine("");
                 foreach (var problematicFile in problematicFiles)
                 {
                     Console.WriteLine(problematicFile);
@@ -98,6 +102,32 @@ namespace ReadExcel.ConsoleApp.Services
             {
                 Console.WriteLine("No problematic files found.");
             }
+
+
+            // ############################## list/write all problematic files in .txt ################################################
+            Console.WriteLine("");
+            string RejectPath = @"C:\Users\syedf\Desktop\COMPLETE LOG DIRECTORY\test\Rejected_Sheets.txt";
+
+            if (problematicFiles.Any())
+            {
+                using (StreamWriter writer = new StreamWriter(RejectPath))
+                {
+
+                    writer.WriteLine("List of Problematic Files:");
+
+                    foreach (var problematicFile in problematicFiles)
+                    {
+                        writer.WriteLine(problematicFile);
+                    }
+
+                    Console.WriteLine($"These problematic files have been written to: {RejectPath}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No problematic files to write.");
+            }
+
         }
     }
 }
