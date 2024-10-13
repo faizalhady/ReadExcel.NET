@@ -6,6 +6,7 @@ namespace ReadExcel.ConsoleApp.Services
 {
     public class InsertIntoLogData
     {
+        public static int RejectedFileCount = 0;
         public static LogData ProcessCsvFile(string filePath)
         {
             var lines = File.ReadAllLines(filePath);
@@ -35,7 +36,8 @@ namespace ReadExcel.ConsoleApp.Services
                 SoftwareVersion = values[4],
                 Status = values[5],
                 PCName = values[6],
-                IPAddress = values[7]
+                IPAddress = values[7],
+                DataProcessedAt = DateTime.Now
             };
         }
 
@@ -45,11 +47,13 @@ namespace ReadExcel.ConsoleApp.Services
             {
                 var rejectedFile = new RejectedFile
                 {
-                    FileName = Path.GetFileName(filePath)  // Extract only the file name
+                    FileName = Path.GetFileName(filePath),  // Extract only the file name
+                    DataProcessedAt = DateTime.Now
                 };
 
                 context.RejectedFiles.Add(rejectedFile);
-                Console.WriteLine($"Data from {filePath} is rejected");
+                RejectedFileCount++;
+                // Console.WriteLine($"Data from {filePath} is rejected");
                 context.SaveChanges();
                 
             }

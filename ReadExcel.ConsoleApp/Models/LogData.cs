@@ -10,4 +10,5 @@ public class LogData
     public required string Status { get; set; }
     public required string PCName { get; set; }
     public required string IPAddress { get; set; }
+    public DateTime DataProcessedAt { get; set; }
 }
